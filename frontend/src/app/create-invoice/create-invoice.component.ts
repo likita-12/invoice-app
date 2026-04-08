@@ -19,7 +19,7 @@ export class CreateInvoiceComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   create() {
-    this.http.post('http://localhost:3000/api/invoices', this.invoice)
+    this.http.post('https://invoice-app-bni4.onrender.com/api/invoices', this.invoice)
       .subscribe(() => this.router.navigate(['/']));
   }
 }
