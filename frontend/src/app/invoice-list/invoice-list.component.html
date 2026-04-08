@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Invoices</h2>
+    <button (click)="goToCreate()">+ Create Invoice</button>
+  </div>
+
+  <table>
+    <tr>
+      <th>Invoice #</th>
+      <th>Customer</th>
+      <th>Total</th>
+      <th>Status</th>
+    </tr>
+
+    <tr *ngFor="let inv of invoices" (click)="openInvoice(inv.id)" class="row">
+      <td>{{inv.invoiceNumber}}</td>
+      <td>{{inv.customerName}}</td>
+      <td>{{inv.total | currency:'INR'}}</td>
+      <td>
+        <span class="status">{{inv.status}}</span>
+      </td>
+    </tr>
+  </table>
+
+</div>

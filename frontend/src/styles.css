@@ -1,0 +1,30 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-family: 'Inter', sans-serif;
+}
+
+
+.navbar {
+  background: #1e293b;
+  padding: 15px 40px;
+}
+
+.navbar a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+router-outlet + * {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
