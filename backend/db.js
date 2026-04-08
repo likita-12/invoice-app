@@ -7,14 +7,17 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME,
   port: process.env.DB_PORT,
   ssl: {
+    ca: undefined,
     rejectUnauthorized: false
   }
 });
 
 db.connect((err) => {
   if (err) {
-    console.error("DB connection failed:", err);
+    console.error("DB connection failed ❌:", err);
   } else {
     console.log("DB connected ✅");
   }
 });
+
+module.exports = db;
