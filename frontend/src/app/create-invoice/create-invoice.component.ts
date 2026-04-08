@@ -26,7 +26,7 @@ export class CreateInvoiceComponent {
       return;
     }
 
-    this.http.post('https://invoice-app-bni4.onrender.com/api/invoices', this.invoice)
+    this.http.get('https://invoice-app-bni4.onrender.com/api/invoices', this.invoice)
       .subscribe({
         next: (res) => {
           console.log("Invoice created:", res);
