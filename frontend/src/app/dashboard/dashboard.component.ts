@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('https://invoice-app-1-dx9a.onrender.com/api/invoices')
+    this.http.get<any[]>('https://invoice-app-bni4.onrender.com')
       .subscribe(res => {
         this.totalInvoices = res.length;
         this.totalRevenue = res.reduce((sum, i) => sum + Number(i.total), 0);
