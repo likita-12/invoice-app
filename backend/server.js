@@ -24,10 +24,25 @@ app.post("/api/invoices", async (req, res) => {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
+    const subtotal = 100; // temporary (or from frontend later)
+    const taxAmount = subtotal * (taxPercent / 100);
+    const total = subtotal + taxAmount;
+
     const query = `
-      INSERT INTO invoices (invoice_number, customer_name, tax_percentage)
-      VALUES (?, ?, ?)
+    INSERT INTO invoices 
+    (invoice_number, customer_name, tax_percentage, subtotal, tax_amount, total, balance_due)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
+
+const [result] = await db.promise().query(query, [
+  invoiceNumber,
+  customerName,
+  taxPercent,
+  subtotal,
+  taxAmount,
+  total,
+  total
+]);
 
     const [result] = await db.promise().query(query, [
       invoiceNumber,
