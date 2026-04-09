@@ -176,5 +176,5 @@ Frontend runs on:
 
 ## 👨‍💻 Author
 
-**Datla Maheeja**  
+**Bojja Likita Reddy**  
 Full-Stack Developer  
